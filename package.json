@@ -1,0 +1,22 @@
+{
+  "name": "project_3",
+  "version": "1.0.0",
+  "description": "An e-commerce website that sells phones and computer hardware.",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nafisa-am/btech.git"
+  },
+  "keywords": [
+    "e-comerce"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nafisa-am/btech/issues"
+  },
+  "homepage": "https://github.com/nafisa-am/btech#readme"
+}
