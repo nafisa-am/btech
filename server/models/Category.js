@@ -14,7 +14,12 @@ categorySchema = new Schema({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  products: [Products],
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "product",
+    },
+  ],
 });
 
 categorySchema

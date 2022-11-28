@@ -1,5 +1,4 @@
 const { Schema, Types } = require("mongoose");
-const Category = require("./Category");
 
 class Product extends Model {}
 
@@ -29,13 +28,7 @@ productSchema = new Schema({
     allowNull: false,
     defaultValue: 10,
   },
-  category: [
-    {
-      type: Schema.Types.STRING,
-      ref: "category",
-    },
-  ],
 });
 
-const product = model("product", productSchema);
+const Product = model("product", productSchema);
 module.exports = Product;

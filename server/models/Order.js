@@ -18,7 +18,7 @@ const orderSchema = new Schema(
       },
       allowNull: false,
     },
-    lineItems: [Products],
+    lineItems: [Product],
     shippingAddress1: {
       type: DataTypes.STRING,
       allowNull: false,

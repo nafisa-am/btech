@@ -1,54 +1,52 @@
-const { Model, DataTypes } = require("sequelize");
+const { Schema, model } = require("mongoose");
 
-const sequelize = require("../config/connection");
+// {
+// "username": "Darren",
+// "email": "darren@kandekore.net"}
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      index: { unique: true },
+      trim: true,
+    },
 
-class User extends Model {
-	checkPassword(loginPw) {
-		return bcrypt.compareSync(loginPw, this.password);
-	}
-}
-
-User.init(
-	{
-		id: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-			primaryKey: true,
-			autoIncrement: true,
-		},
-		username: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		email: {
-			type: DataTypes.STRING,
-			allowNull: false,
-			unique: true,
-			validate: {
-				isEmail: true,
-			},
-		},
-		password: {
-			type: DataTypes.STRING,
-			allowNull: false,
-			validate: {
-				len: [6],
-			},
-		},
-	},
-	{
-		hooks: {
-			async beforeCreate(newUserData) {
-				newUserData.password = await bcrypt.hash(newUserData.password, 10);
-				return newUserData;
-			},
-		},
-		sequelize,
-		timestamps: false,
-		freezeTableName: true,
-		underscored: true,
-		modelName: "user",
-	}
+    email: {
+      type: String,
+      trim: true,
+      lowercase: true,
+      unique: true,
+      validate: {
+        validator: function (v) {
+          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: "Please enter a valid email",
+      },
+      required: [true, "Email required"],
+    },
+    orders: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Order",
+      },
+    ],
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+    id: false,
+  }
 );
+
+userSchema
+  .virtual("friendcount")
+  // Getter
+  .get(function () {
+    return this.friends.length;
+  });
+
+const User = model("user", userSchema);
 
 module.exports = User;
