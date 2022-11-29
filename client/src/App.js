@@ -1,11 +1,20 @@
-import SignupForm from "./components/signUp";
-import Navbar from "./components/Navbar";
+import SignupForm from "./components/SignUp/signUp";
+// import Navbar from "./components/Navbar";
 import "./App.css";
+import { Route, Router, Routes } from "react-router-dom";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <div className="App">
-      <SignupForm />
+      <Router>
+        <SignupForm />
+        <Routes>
+          <Route path="/">
+            <Login />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
