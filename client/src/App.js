@@ -1,16 +1,16 @@
-import SignupForm from "./components/SignUp/signUp";
-// import Navbar from "./components/Navbar";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
+import LoginSignup from "./pages/LoginSignup";
 
 function App() {
   return (
     <>
       <Router>
+        {/* HEADER */}
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<LoginSignup />} />
         </Routes>
+        {/* FOOTER */}
       </Router>
     </>
   );

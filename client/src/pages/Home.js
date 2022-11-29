@@ -2,14 +2,14 @@ import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="container">
-      {/* to add what components you want to render */}
-      {/* <CategoryMenu />
-      <ProductList />
-      <Cart /> */}
+    <div>
+      {/* Splash */}
+      {/* link to products */}
+      {/* link to login signup */}
     </div>
   );
 };
