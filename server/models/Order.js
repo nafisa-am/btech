@@ -1,47 +1,43 @@
-const { Schema, Types, Model } = require("mongoose");
+const { Schema, Types, model } = require("mongoose");
 const Product = require("./Product");
-
-class Order extends Model {}
 
 const orderSchema = new Schema(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: Number,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     shipping: {
-      type: DataTypes.DECIMAL,
-      validate: {
-        isDecimal: true,
-      },
+      type: Number,
+
       allowNull: false,
     },
     products: [
       {
         type: Schema.Types.ObjectId,
-        ref: "product",
+        ref: "Product",
       },
     ],
     shippingAddress1: {
-      type: DataTypes.STRING,
+      type: String,
       allowNull: false,
     },
     shippingAddress2: {
-      type: DataTypes.STRING,
+      type: String,
       allowNull: true,
     },
     shippingProvince: {
-      type: DataTypes.STRING,
+      type: String,
       allowNull: false,
     },
     shippingCounty: {
-      type: DataTypes.STRING,
+      type: String,
       allowNull: false,
     },
     shippingPostcode: {
-      type: DataTypes.STRING,
+      type: String,
       allowNull: false,
     },
   },
@@ -58,12 +54,12 @@ const orderSchema = new Schema(
 );
 
 orderSchema
-  .virtual("products")
+  .virtual("totalProductsPrice")
   // Getter
   .get(function () {
-    return this.products.price.sum;
+    return this.Products.price.sum;
   });
 
-const Order = model("order", orderSchema);
+const Order = model("Order", orderSchema);
 
 module.exports = Order;
