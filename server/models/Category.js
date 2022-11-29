@@ -1,23 +1,19 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, Types, model } = require("mongoose");
 
-class Category extends Model {}
-
-categorySchema = new Schema({
+const categorySchema = new Schema({
   id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
+    type: Number,
+    required: true,
   },
 
   category_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    type: String,
+    required: true,
   },
   products: [
     {
       type: Schema.Types.ObjectId,
-      ref: "product",
+      ref: "Product",
     },
   ],
 });

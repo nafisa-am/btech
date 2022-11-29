@@ -1,34 +1,32 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, Types, model } = require("mongoose");
 
-class Product extends Model {}
-
-productSchema = new Schema({
+const productSchema = new Schema({
   id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
+    type: Number,
+    require: true,
   },
   product_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    type: String,
+    require: true,
+  },
+  product_description: {
+    type: String,
+    require: true,
   },
   price: {
-    type: DataTypes.DECIMAL,
-    validate: {
-      isDecimal: true,
-    },
-    allowNull: false,
+    type: Number,
+
+    require: true,
   },
   stock: {
-    type: DataTypes.INTEGER,
-    validate: {
-      isNumeric: true,
-    },
-    allowNull: false,
-    defaultValue: 10,
+    type: Number,
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "category",
   },
 });
 
-const Product = model("product", productSchema);
+const Product = model("Product", productSchema);
+
 module.exports = Product;

@@ -1,4 +1,4 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, Types, Model } = require("mongoose");
 const Product = require("./Product");
 
 class Order extends Model {}
@@ -18,7 +18,12 @@ const orderSchema = new Schema(
       },
       allowNull: false,
     },
-    lineItems: [Product],
+    products: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "product",
+      },
+    ],
     shippingAddress1: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -53,7 +58,7 @@ const orderSchema = new Schema(
 );
 
 orderSchema
-  .virtual("Products")
+  .virtual("products")
   // Getter
   .get(function () {
     return this.products.price.sum;
