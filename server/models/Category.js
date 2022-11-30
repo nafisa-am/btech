@@ -1,31 +1,30 @@
-const { Model, DataTypes } = require("sequelize");
+const { Schema, Types, model } = require("mongoose");
 
-const sequelize = require("../config/connection.js");
+const categorySchema = new Schema({
+  id: {
+    type: Number,
+    required: true,
+  },
 
-class Category extends Model {}
+  category_name: {
+    type: String,
+    required: true,
+  },
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Product",
+    },
+  ],
+});
 
-Category.init(
-	{
-		id: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-			primaryKey: true,
-			autoIncrement: true,
-		},
+categorySchema
+  .virtual("Products")
+  // Getter
+  .get(function () {
+    return this.products.length;
+  });
 
-		category_name: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-	},
-
-	{
-		sequelize,
-		timestamps: false,
-		freezeTableName: true,
-		underscored: true,
-		modelName: "category",
-	}
-);
+const Category = model("category", categorySchema);
 
 module.exports = Category;
