@@ -1,8 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// {
-// "username": "Darren",
-// "email": "darren@kandekore.net"}
 const userSchema = new Schema(
   {
     username: {
@@ -10,6 +7,14 @@ const userSchema = new Schema(
       required: true,
       index: { unique: true },
       trim: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
     },
 
     email: {
@@ -24,6 +29,9 @@ const userSchema = new Schema(
         message: "Please enter a valid email",
       },
       required: [true, "Email required"],
+    },
+    password: {
+      type: String,
     },
     orders: [
       {
