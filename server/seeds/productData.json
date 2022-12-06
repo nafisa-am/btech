@@ -1,0 +1,30 @@
+[
+  {
+    "brand": "Apple",
+    "product_name": "MacBook Air",
+    "product_description": [
+      "macOS 11.0 Big Sur",
+      "Apple M1 chip",
+      "RAM: 8 GB / Storage: 256 GB SSD",
+      "Retina display",
+      "Battery life: Up to 18 hours"
+    ],
+    "price": 800,
+    "stock": 10,
+    "image": "macbook.jfif"
+  },
+  {
+    "brand": "Acer",
+    "product_name": "Aspire 3 15.6' Laptop - Intel® Core™ i3, 128 GB SSD, Silver",
+    "product_description": [
+      "Windows 11",
+      "Intel® Core™ i3-1115G4 Processor",
+      "RAM: 8 GB / Storage: 128 GB SSD",
+      "Full HD screen",
+      "Battery life: Up to 9 hours"
+    ],
+    "price": 300,
+    "stock": 10,
+    "image": "acer.jfif"
+  }
+]

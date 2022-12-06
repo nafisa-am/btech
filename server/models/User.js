@@ -1,8 +1,6 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-// {
-// "username": "Darren",
-// "email": "darren@kandekore.net"}
 const userSchema = new Schema(
   {
     username: {
@@ -10,6 +8,14 @@ const userSchema = new Schema(
       required: true,
       index: { unique: true },
       trim: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
     },
 
     email: {
@@ -25,6 +31,9 @@ const userSchema = new Schema(
       },
       required: [true, "Email required"],
     },
+    password: {
+      type: String,
+    },
     orders: [
       {
         type: Schema.Types.ObjectId,
@@ -39,6 +48,17 @@ const userSchema = new Schema(
     id: false,
   }
 );
+
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
+  next();
+});
+
+userSchema.methods.validatePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 const User = model("User", userSchema);
 

@@ -1,0 +1,16 @@
+[
+  {
+    "username": "pparker",
+    "email": "pparker@email.com",
+    "name": "Peter Parker",
+    "password": "password123",
+    "address": "test address street city area postcode"
+  },
+  {
+    "username": "mmarker",
+    "email": "mmarker@email.com",
+    "name": "Meter Marker",
+    "password": "password123",
+    "address": "test address street city area postcode"
+  }
+]
