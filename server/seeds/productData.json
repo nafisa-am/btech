@@ -1,0 +1,32 @@
+[
+  {
+    "brand": "Apple",
+    "product_name": "MacBook Air",
+    "product_description": [
+      "<li>macOS 11.0 Big Sur</li>",
+      "<li>Apple M1 chip</li>",
+      "<li>RAM: 8 GB / Storage: 256 GB SSD</li>",
+      "<li>Retina display</li>",
+      "<li>Battery life: Up to 18 hours</li>"
+    ],
+    "Price": "£800",
+    "Stock": "10",
+    "category": "Laptops",
+    "image": "./assets/images/macbook.jfif"
+  },
+  {
+    "brand": "Acer",
+    "product_name": "Aspire 3 15.6' Laptop - Intel® Core™ i3, 128 GB SSD, Silver",
+    "product_description": [
+      "<li>Windows 11</li>",
+      "<li>Intel® Core™ i3-1115G4 Processor</li>",
+      "<li>RAM: 8 GB / Storage: 128 GB SSD</li>",
+      "<li>Full HD screen</li>",
+      "<li>Battery life: Up to 9 hours</li>"
+    ],
+    "Price": "£300",
+    "Stock": "10",
+    "category": "Laptops",
+    "image": "./assets/images/acer.jfif"
+  }
+]

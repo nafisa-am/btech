@@ -1,14 +1,16 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const { default: mongoose } = require("mongoose");
-
+const path = require("path");
 const { typeDefs, resolvers } = require("./schemas");
-const { DB_NAME, DB_URL, MONGOOSE_OPTIONS } = require("./config/config");
+// const { DB_NAME, DB_URL, MONGOOSE_OPTIONS } = require("./config/config");
 
-mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
+// mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
+
+const db = require("./config/config");
 
 const myvar = "random string";
-const db = mongoose.connection;
+// const db = mongoose.connection;
 
 const PORT = process.env.PORT || 3001;
 
