@@ -10,11 +10,17 @@ const typeDefs = gql`
     _id: ID
     category_name: String
   }
+  type Brand {
+    _id: ID
+    brand_name: String
+  }
   type Query {
     products: [Product]!
     product(productId: ID!): Product
     categories: [Category]!
     category(categoryId: ID!): Category
+    brands: [Brand]!
+    brand(brandId: ID!): Brand
   }
 
   type Mutation {
