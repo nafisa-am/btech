@@ -1,9 +1,7 @@
 [
-  {
-    "brand_name": "Apple",
-    "brand_name": "Acer",
-    "brand_name": "HP",
-    "brand_name": "Dell",
-    "brand_name": "Lenovo"
-  }
+  { "brand_name": "Apple" },
+  { "brand_name": "Acer" },
+  { "brand_name": "HP" },
+  { "brand_name": "Dell" },
+  { "brand_name": "Lenovo" }
 ]
