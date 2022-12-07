@@ -37,7 +37,7 @@ body {
 }
 
 ul {
-	width: 80%;
+	width: 90%;
 	list-style: none;
 	display: inline-flex;
 	/* flex-direction: row; */
@@ -49,16 +49,28 @@ ul {
 	margin-right: 20%;
 }
 
+ul a:hover {
+	background: var(--orange-web);
+	transition: 0.5s;
+}
+
 a {
 	text-decoration: none;
 	margin-left: 7px;
 	margin-right: 7px;
 	justify-content: space-evenly;
 	font-size: 20px;
+	padding: 7px 13px;
+	text-transform: uppercase;
 }
 
 .dropdown {
 	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.dropdown a:hover {
+	background: var(--orange-web);
 }
 
 body {
@@ -68,14 +80,20 @@ body {
 
 /* Search Bar */
 
-.container-fluid {
-	margin-left: 40%;
+.container-search {
+	margin-left: 18%;
 	margin-top: 2%;
 	margin-bottom: -6%;
+	width: 22%;
 }
 
+/* User Icons */
 .container-user {
-	margin-left: 30%;
-	margin-top: 2%;
-	margin-bottom: -2%;
+	margin-left: 70%;
+	margin-top: -5%;
+	margin-bottom: -3%;
+}
+
+.dropdown-item {
+	font-size: 12px;
 }
