@@ -1,0 +1,81 @@
+:root {
+	--xiketic: #03071eff;
+	--vermilion: #dc2f02ff;
+	--persimmon: #e85d04ff;
+	--tangerine: #f48c06ff;
+	--orange-web: #faa307ff;
+	--cotton-candy: #fdc5f5ff;
+	--plum-web: #f7aef8ff;
+	--lavender-floral: #b388ebff;
+	--cornflower-blue: #8093f1ff;
+	--sky-blue-crayola: #72ddf7ff;
+}
+
+body {
+	background: linear-gradient(180deg #fdc5f5ff, #b388ebff, #8093f1ff);
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-evenly;
+	/* border-bottom: 1px orangered solid; */
+	border-radius: 2px;
+	border-style: solid;
+	width: 100%;
+}
+
+.hyperlink {
+	color: black;
+	font-size: 20px;
+}
+
+/* Navbar */
+
+.logo {
+	width: 20%;
+	/* border: 1px solid red; */
+}
+
+ul {
+	width: 80%;
+	list-style: none;
+	display: inline-flex;
+	/* flex-direction: row; */
+	color: #f2f2f2;
+	/* padding: 14px 16px; */
+	text-decoration: none;
+	font-size: 17px;
+	/* border: 1px solid red; */
+	margin-right: 20%;
+}
+
+a {
+	text-decoration: none;
+	margin-left: 7px;
+	margin-right: 7px;
+	justify-content: space-evenly;
+	font-size: 20px;
+}
+
+.dropdown {
+	font-size: 20px;
+}
+
+body {
+	background: linear-gradient(#fdc5f5ff, #9198e5) 50%;
+	background-attachment: fixed; /*edit*/
+}
+
+/* Search Bar */
+
+.container-fluid {
+	margin-left: 40%;
+	margin-top: 2%;
+	margin-bottom: -6%;
+}
+
+.container-user {
+	margin-left: 30%;
+	margin-top: 2%;
+	margin-bottom: -2%;
+}
