@@ -1,0 +1,18 @@
+[
+  {
+    "shipping": "124283725hgfdg",
+    "shippingAddressOne": "addr one",
+    "shippingAddressTwo": "addr 2",
+    "shippingProvince": "west midlands",
+    "shippingCounty": "uk",
+    "shippingPostcode": "b111b23"
+  },
+  {
+    "shipping": "nafgew7rtefyudabk",
+    "shippingAddressOne": "addr one",
+    "shippingAddressTwo": "addr 2",
+    "shippingProvince": "east midlands",
+    "shippingCounty": "spain",
+    "shippingPostcode": "sp1234"
+  }
+]

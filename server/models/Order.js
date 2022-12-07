@@ -1,18 +1,10 @@
 const { Schema, Types, model } = require("mongoose");
-const Product = require("./Product");
 
 const orderSchema = new Schema(
   {
-    id: {
-      type: Number,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     shipping: {
-      type: Number,
-
-      allowNull: false,
+      type: String,
+      required: true,
     },
     products: [
       {
@@ -20,25 +12,20 @@ const orderSchema = new Schema(
         ref: "Product",
       },
     ],
-    shippingAddress1: {
+    shippingAddressOne: {
       type: String,
-      allowNull: false,
     },
-    shippingAddress2: {
+    shippingAddressTwo: {
       type: String,
-      allowNull: true,
     },
     shippingProvince: {
       type: String,
-      allowNull: false,
     },
     shippingCounty: {
       type: String,
-      allowNull: false,
     },
     shippingPostcode: {
       type: String,
-      allowNull: false,
     },
   },
   {
