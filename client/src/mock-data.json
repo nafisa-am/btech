@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"product": "Acer",
+		"category": "laptop"
+	},
+	{
+		"id": 2,
+		"product": "Apple",
+		"category": "laptop"
+	},
+	{
+		"id": 3,
+		"product": "Apple",
+		"category": "tablet"
+	},
+	{
+		"id": 4,
+		"product": "Apple",
+		"category": "laptop"
+	},
+	{
+		"id": 5,
+		"product": "Samsung",
+		"category": "phone"
+	},
+	{
+		"id": 6,
+		"product": "Apple",
+		"category": "phone"
+	},
+	{
+		"id": 7,
+		"product": "Samsung",
+		"category": "tablet"
+	},
+	{
+		"id": 8,
+		"product": "Beats",
+		"category": "headphones"
+	}
+]

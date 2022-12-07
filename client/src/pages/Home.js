@@ -4,14 +4,20 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 
 const Home = () => {
-  return (
-    <div className="container">
-      {/* to add what components you want to render */}
-      {/* <CategoryMenu />
+	return (
+		<div className="container">
+			{/* to add what components you want to render */}
+			{/* <CategoryMenu />
       <ProductList />
       <Cart /> */}
-    </div>
-  );
+			{Data.map((post) => (
+				<div key={post.id}>
+					<p>{post.product}</p>
+					<p>{post.category}</p>
+				</div>
+			))}
+		</div>
+	);
 };
 
 export default Home;
