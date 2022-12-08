@@ -40,9 +40,23 @@ const typeDefs = gql`
     brand(brandId: ID!): Brand
   }
 
+  input signupInput {
+    username: String!
+    email: String!
+    name: String!
+    password: String!
+    address: String!
+  }
+
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): User
+    addUser(
+      username: String!
+      email: String!
+      name: String!
+      password: String!
+      address: String!
+    ): Auth
     addProduct(name: String!): Product
     addOrder(orderID: ID!): Order
     removeProduct(productId: ID!): Product
