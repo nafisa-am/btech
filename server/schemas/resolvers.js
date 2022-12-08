@@ -19,6 +19,28 @@ const resolvers = {
         console.error(error);
       }
     },
+    category: async (_, { categoryId }) => {
+      try {
+        return Category.findById({ _id: categoryId });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    brand: async (_, { brandId }) => {
+      try {
+        return Brand.findById({ _id: brandId });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    user: async (_, { userId }) => {
+      try {
+        return User.findById({ _id: userId });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
     // if (product) {
     //   params.category = category;
     // }
