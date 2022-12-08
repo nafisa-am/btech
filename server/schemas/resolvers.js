@@ -3,12 +3,22 @@ const { Product, Category, User, Order, Brand } = require("../models");
 const resolvers = {
   Query: {
     products: async () => {
-      return Product.find();
+      return Product.find({});
     },
     categories: async () => {
-      return Category.find();
+      return Category.find({});
     },
 
+    brands: async () => {
+      return Brand.find({});
+    },
+    product: async (_, { productId }) => {
+      try {
+        return Product.findById({ _id: productId });
+      } catch (error) {
+        console.error(error);
+      }
+    },
     // if (product) {
     //   params.category = category;
     // }
@@ -18,9 +28,6 @@ const resolvers = {
     //     $regex: name
     //   };
     // }
-    // products: async (parent, { productId }) => {
-    //   return Product.findOne({ _id: productId });
-    // },
   },
   Mutation: {
     login: async (parent, { email, password }) => {
