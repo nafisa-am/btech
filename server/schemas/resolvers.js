@@ -9,6 +9,15 @@ const resolvers = {
       return Category.find();
     },
 
+    // if (product) {
+    //   params.category = category;
+    // }
+
+    // if (name) {
+    //   params.name = {
+    //     $regex: name
+    //   };
+    // }
     // products: async (parent, { productId }) => {
     //   return Product.findOne({ _id: productId });
     // },

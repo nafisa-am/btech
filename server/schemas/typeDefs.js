@@ -8,16 +8,18 @@ const typeDefs = gql`
   }
   type Product {
     _id: ID
-    product_name: String
-    product_description: [String]
+    name: String
+    description: [String]
+    price: FLOAT 
+    image: String
   }
   type Category {
     _id: ID
-    category_name: String
+    name: String
   }
   type Brand {
     _id: ID
-    brand_name: String
+    name: String
   }
   type Order {
     _id: ID
