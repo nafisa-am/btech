@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./style.css";
-import { css } from "@emotion/react";
+import { css } from "@emotion/css";
 
 import { checkPassword, validateEmail } from "../../utils/logins";
 
-function LoginForm() {
+function SignUpForm() {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -18,8 +20,12 @@ function LoginForm() {
       setEmail(inputValue);
     } else if (inputType === "userName") {
       setUserName(inputValue);
-    } else {
+    } else if (inputType === "password") {
       setPassword(inputValue);
+    } else if (inputType === "name") {
+      setName(inputValue);
+    } else {
+      setAddress(inputValue);
     }
   };
 
@@ -41,10 +47,16 @@ function LoginForm() {
     setUserName("");
     setPassword("");
     setEmail("");
+    setAddress("");
+    setName("");
   };
 
   return (
-    <div>
+    <div
+      css={css`
+        background-color: black;
+      `}
+    >
       <form className="form">
         <input
           value={email}
@@ -59,6 +71,20 @@ function LoginForm() {
           onChange={handleInputChange}
           type="text"
           placeholder="username"
+        />
+        <input
+          value={name}
+          name="name"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="name"
+        />
+        <input
+          value={address}
+          name="address"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="address"
         />
         <input
           value={password}
@@ -80,4 +106,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default SignUpForm;
