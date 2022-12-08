@@ -3,5 +3,13 @@
   { "brand_name": "Acer" },
   { "brand_name": "HP" },
   { "brand_name": "Dell" },
-  { "brand_name": "Lenovo" }
+  { "brand_name": "Lenovo" },
+  { "brand_name": "Vaio" },
+  { "brand_name": "Lenovo" },
+  { "brand_name": "Asus" },
+  { "brand_name": "Chromebook" },
+  { "brand_name": "Huawei" },
+  { "brand_name": "LG" },
+  { "brand_name": "Sony" },
+  { "brand_name": "Logitech" }
 ]
