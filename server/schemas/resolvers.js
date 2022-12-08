@@ -1,3 +1,4 @@
+const {AuthenticationError} = require("apollo-server-express")
 const { Product, Category, User, Order, Brand } = require("../models");
 const { authMiddleware, signToken } = require("../utils/auth");
 
