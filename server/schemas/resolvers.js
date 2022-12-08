@@ -1,4 +1,5 @@
 const { Product, Category, User, Order, Brand } = require("../models");
+const { authMiddleware, signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -58,7 +59,7 @@ const resolvers = {
       if (!user) {
         throw new AuthenticationError("Incorrect credentials");
       }
-      const correctPassword = await user.isCorrectPassword(password);
+      const correctPassword = await user.validatePassword(password);
 
       // check password
       if (!correctPassword) {

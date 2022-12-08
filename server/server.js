@@ -5,6 +5,8 @@ const path = require("path");
 const { typeDefs, resolvers } = require("./schemas");
 // const { DB_NAME, DB_URL, MONGOOSE_OPTIONS } = require("./config/config");
 
+
+
 // mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const db = require("./config/config");
