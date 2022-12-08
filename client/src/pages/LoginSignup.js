@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import LoginForm from "../components/Form";
 
 function LoginSignup() {
   return (
     <>
-      <h2>Login page</h2>
+      <LoginForm />
     </>
   );
 }
