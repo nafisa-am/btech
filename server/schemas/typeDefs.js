@@ -19,7 +19,7 @@ const typeDefs = gql`
     _id: ID
     brand: String
     product_name: String
-    product_description: String
+    product_description: [String]
     price: Int
     stock: Int
     image: String
@@ -74,7 +74,7 @@ const typeDefs = gql`
     addProduct(
       brand: String
       product_name: String
-      product_description: String
+      product_description: [String]
       price: Int
       stock: Int
       image: String
