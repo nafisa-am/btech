@@ -1,12 +1,10 @@
 // import logo from "./logo.svg";
 import "./App.css";
 // import Data from "../mock-data.json";
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-
 import Products from "./components/ProductList";
 
 function App() {
