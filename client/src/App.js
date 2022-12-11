@@ -1,26 +1,54 @@
-// import logo from "./logo.svg";
-import "./App.css";
-// import Data from "../mock-data.json";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+
+import "./App.css";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Products from "./components/ProductList";
 
+const httpLink = createHttpLink({
+  uri: process.env.GRAPHQL_URL || "http://localhost:3001/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  return {
+    headers: {
+      ...headers,
+      authorization: user ? `Bearer ${user.token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <Router>
-        {/* HEADER */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Products />} />
-          {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
-        </Routes>
-        {/* FOOTER */}
-      </Router>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Nav />
+        <Router>
+          {/* HEADER */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Products />} />
+            {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
+          </Routes>
+          {/* FOOTER */}
+        </Router>
+      </div>
+    </ApolloProvider>
   );
 }
 
