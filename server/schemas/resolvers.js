@@ -1,4 +1,4 @@
-const {AuthenticationError} = require("apollo-server-express")
+const { AuthenticationError } = require("apollo-server-express");
 const { Product, Category, User, Order, Brand } = require("../models");
 const { authMiddleware, signToken } = require("../utils/auth");
 
@@ -86,6 +86,10 @@ const resolvers = {
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+    addProduct: async (parent, args, context) => {
+      const newProduct = await Product.create(args);
+      return newProduct;
     },
   },
 };

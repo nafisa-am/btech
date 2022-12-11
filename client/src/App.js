@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Data from "../mock-data.json";
+// import Data from "../mock-data.json";
 
 function App() {
 	return (
