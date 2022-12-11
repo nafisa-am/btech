@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 
+import Products from "./components/ProductList";
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,7 @@ function App() {
         {/* HEADER */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Products />} />
           {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
         </Routes>
         {/* FOOTER */}
