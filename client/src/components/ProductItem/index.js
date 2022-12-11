@@ -11,14 +11,12 @@ export default function Items({ data }) {
       <Row xs={1} md={3} className="g-4">
         {data.map((item, idx) => (
           <Col className="d-flex">
-            <Card className="flex-fill" key={item.head.product_name}>
-              <Card.Img variant="top" src={item.head.image} />
+            <Card className="flex-fill" key={item.product_name}>
+              <Card.Img variant="top" src={item.image} />
               <Card.Body>
-                <Card.Title className="projtit">
-                  {item.head.product_name}
-                </Card.Title>
+                <Card.Title className="projtit">{item.product_name}</Card.Title>
 
-                <Card.Text>{item.head.product_description}</Card.Text>
+                <Card.Text>{item.product_description}</Card.Text>
                 <Card.Text>
                   <strong>Price:</strong>£{item.price}
                 </Card.Text>
