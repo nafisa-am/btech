@@ -21,7 +21,7 @@ function Nav() {
         </div>
 
         {/* Search bar */}
-        <div className="container-search">
+        {/* <div className="container-search">
           <form className="d-flex input-group w-auto">
             <input
               type="search"
@@ -31,7 +31,7 @@ function Nav() {
               aria-describedby="search-addon"
             />
           </form>
-        </div>
+        </div> */}
 
         {/* Navigation links */}
         <ul>
@@ -44,6 +44,11 @@ function Nav() {
           <li className="mx-1">
             <Link className="hyperlink" to="/about">
               About
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link className="hyperlink" to="/search">
+              Search
             </Link>
           </li>
 
