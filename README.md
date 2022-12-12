@@ -3,6 +3,7 @@ MERN Stack Single-Page Application
 
 ## Description
 
+## User Story
 
 ## Technologies
 - React 
@@ -10,10 +11,15 @@ MERN Stack Single-Page Application
 - Express
 - graphql
 
+## Installation 
+
 ## Screen shot
 
 
 ## Link 
 
 GitHub URL - https://github.com/nafisa-am/btech 
+
+## Contributors
+
 
