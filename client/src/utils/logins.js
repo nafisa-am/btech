@@ -5,7 +5,7 @@ export function validateEmail(email) {
 }
 
 export function checkPassword(input) {
-  const passw = /^[A-Za-z]\w{5,25}$/;
+  const passw = /^[A-Za-z]\w{3,25}$/;
   if (input.match(passw)) {
     return true;
   }

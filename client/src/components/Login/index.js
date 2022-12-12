@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./style.css";
 
 import { checkPassword, validateEmail } from "../../utils/logins";
 
@@ -35,7 +34,14 @@ function LoginForm() {
       );
       return;
     }
-    alert(`Hello ${userName}`);
+
+    const form = document.getElementById("loginForm");
+    const formData = new FormData(form);
+
+    alert(`here is your data:
+    ${formData.get("email")}
+    ${formData.get("userName")}
+    ${formData.get("password")}`);
 
     setUserName("");
     setPassword("");
@@ -44,7 +50,11 @@ function LoginForm() {
   const spacer = "mt-2";
   return (
     <div>
-      <form className="form" class="d-flex flex-column align-items-center">
+      <form
+        id="loginForm"
+        className="form"
+        class="d-flex flex-column align-items-center"
+      >
         <h2>Login into your account</h2>
         <input
           value={email}

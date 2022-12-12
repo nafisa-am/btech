@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./style.css";
 
 import { checkPassword, validateEmail } from "../../utils/logins";
 
@@ -43,7 +42,15 @@ function SignUpForm() {
       );
       return;
     }
-    alert(`Hello ${userName}`);
+    const form = document.getElementById("signupForm");
+    const formData = new FormData(form);
+
+    alert(`here is your data:
+    ${formData.get("email")}
+    ${formData.get("userName")}
+    ${formData.get("password")}
+    ${formData.get("name")}
+    ${formData.get("address")}`);
 
     setUserName("");
     setPassword("");
@@ -56,7 +63,11 @@ function SignUpForm() {
 
   return (
     <div>
-      <form className="form" class="d-flex flex-column align-items-center">
+      <form
+        className="form"
+        id="signupForm"
+        class="d-flex flex-column align-items-center"
+      >
         <h2>Create your account</h2>
         <input
           value={email}
@@ -64,7 +75,6 @@ function SignUpForm() {
           onChange={handleInputChange}
           type="email"
           placeholder="email"
-          class={spacer}
         />
         <input
           value={userName}
