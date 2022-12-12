@@ -113,5 +113,17 @@
     "stock": 1,
     "image": "./assets/images/thechromebook.webp"
   }
-  
+  {
+    "brand": "samsung",
+    "product_name": "SAMSUNG Galaxy Tab S6 Lite 10.4” Tablet",
+    "product_description": [
+      "Android 12",
+      "64 GB storage: Perfect for apps / photos / videos / games",
+      "Super AMOLED display",
+      "Battery life: Up to 13 hours"
+    ],
+    "price": 239,
+    "stock": 1,
+    "image": "./assets/images/galaxy-tab.jpeg"
+  }
 ]
