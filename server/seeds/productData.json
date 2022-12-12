@@ -12,7 +12,7 @@
     ],
     "price": 800,
     "stock": 10,
-    "image": "/assets/images/macbook.jfif"
+    "image": "/assets/images/macbook-air.jpeg"
   },
   {
     "brand": "Acer",
@@ -26,7 +26,7 @@
     ],
     "price": 300,
     "stock": 10,
-    "image": "acer.jfif"
+    "image": "./assets/images/acer.jpeg"
   },
   {
     "brand": "HP",
@@ -40,7 +40,7 @@
     ],
     "price": 350,
     "stock": 7,
-    "image": "acer.jfif"
+    "image": "./assets/images/Hp.webp"
   },
 
   {
@@ -55,7 +55,7 @@
     ],
     "price": 400,
     "stock": 3,
-    "image": "acer.jfif"
+    "image": "./assets/images/dell.jpeg"
   },
   {
     "brand": "Logitech",
@@ -69,7 +69,7 @@
     ],
     "price": 150,
     "stock": 4,
-    "image": "acer.jfif"
+    "image": "./assets/images/logitech1.jpeg"
   },
   {
     "brand": "Asus",
@@ -83,7 +83,7 @@
     ],
     "price": 250,
     "stock": 3,
-    "image": "acer.jfif"
+    "image": "./assets/images/asus1.jpeg"
   },
   {
     "brand": "Huawei",
@@ -97,7 +97,7 @@
     ],
     "price": 450,
     "stock": 2,
-    "image": "acer.jfif"
+    "image": "./assets/images/huawei.jpeg"
   },
   {
     "brand": "Chromebook",
@@ -111,7 +111,7 @@
     ],
     "price": 750,
     "stock": 1,
-    "image": "acer.jfif"
+    "image": "./assets/images/thechromebook.webp"
   }
   
 ]
