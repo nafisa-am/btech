@@ -1,4 +1,3 @@
-
 [
   {
     "brand": "Apple",
@@ -12,7 +11,7 @@
     ],
     "price": 800,
     "stock": 10,
-    "image": "macbook.jfif"
+    "image": "/assets/images/macbook.jfif"
   },
   {
     "brand": "Acer",
