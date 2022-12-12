@@ -1,6 +1,16 @@
 const FilterSubComponent = (props) => {
-  const handleBrandChange = (event, brand) => {
-    console.log(brand);
+  const { filters, setFilters } = props;
+
+  const handleBrandChange = (brand) => {
+    // neha
+    // should add the items to the array if they are not present and remove them if they can be fund in the array
+    if (!filters.indexOf(brand)) {
+      const updatedArray = filters.splice(filters.indexOf(brand), 1);
+      setFilters(updatedArray);
+    } else {
+      const newFilters = [...filters, brand];
+      setFilters(newFilters);
+    }
   };
 
   return (
@@ -10,8 +20,7 @@ const FilterSubComponent = (props) => {
           className="input"
           type="checkbox"
           value={props.brand}
-          onChange={(e) => handleBrandChange(e, props.brand)}
-          //checked={brand.includes("")}
+          onChange={() => handleBrandChange(props.brand)}
         />
         <span>{props.brand}</span>
       </label>
