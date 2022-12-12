@@ -1,33 +1,46 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN);
 
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
-    if (inputType === "email") {
-      setEmail(inputValue);
-    } else {
-      setPassword(inputValue);
-    }
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    console.log(formState);
 
-    const form = document.getElementById("loginForm");
-    const formData = new FormData(form);
+    // const form = document.getElementById("loginForm");
+    // const formData = new FormData(form);
 
-    alert(`here is your data:
-    ${formData.get("email")}
-    ${formData.get("password")}`);
+    // alert(`here is your data:
+    // ${formData.get("email")}
+    // ${formData.get("password")}`);
 
-    setPassword("");
-    setEmail("");
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    setFormState({
+      email: "",
+      password: "",
+    });
   };
   const spacer = "mt-2";
   return (
@@ -39,14 +52,14 @@ function LoginForm() {
       >
         <h2>Login into your account</h2>
         <input
-          value={email}
+          value={formState.email}
           name="email"
           onChange={handleInputChange}
           type="email"
           placeholder="email"
         />
         <input
-          value={password}
+          value={formState.password}
           name="password"
           onChange={handleInputChange}
           type="password"
@@ -61,11 +74,6 @@ function LoginForm() {
           Login
         </button>
       </form>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
     </div>
   );
 }
