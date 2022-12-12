@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./style.css";
-import { css } from "@emotion/react";
 
 import { checkPassword, validateEmail } from "../../utils/logins";
 
@@ -65,10 +64,10 @@ function LoginForm() {
           name="password"
           onChange={handleInputChange}
           type="password"
-          placeholder="Password"
+          placeholder="password"
         />
         <button type="button" onClick={handleFormSubmit}>
-          Submit
+          login
         </button>
       </form>
       {errorMessage && (

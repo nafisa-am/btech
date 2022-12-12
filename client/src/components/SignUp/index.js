@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.css";
-import { css } from "@emotion/css";
 
 import { checkPassword, validateEmail } from "../../utils/logins";
 
@@ -13,6 +12,8 @@ function SignUpForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e) => {
+    e.preventDefault();
+
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
@@ -52,11 +53,7 @@ function SignUpForm() {
   };
 
   return (
-    <div
-      css={css`
-        background-color: black;
-      `}
-    >
+    <div>
       <form className="form">
         <input
           value={email}
