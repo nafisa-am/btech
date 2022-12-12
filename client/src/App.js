@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   ApolloProvider,
@@ -40,15 +40,13 @@ function App() {
       <UserProvider>
         <div className="App">
           <Nav />
-          <Router>
-            {/* HEADER */}
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<Products />} />
-              {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
-            </Routes>
-            {/* FOOTER */}
-          </Router>
+          {/* HEADER */}
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<Products />} />
+            {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
+          </Routes>
+          {/* FOOTER */}
         </div>
       </UserProvider>
     </ApolloProvider>
