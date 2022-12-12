@@ -125,5 +125,45 @@
     "price": 239,
     "stock": 1,
     "image": "./assets/images/galaxy-tab.jpeg"
+  },
+  {
+    "brand": "Apple",
+    "product_name": "APPLE iPhone 13 - 128 GB, Green",
+    "product_description": [
+      "iOS 15",
+      "6.1 Super Retina XDR display",
+      "12 MP front camera",
+      "Apple A15 Bionic processor"
+    ],
+    "price": 749,
+    "stock": 1,
+    "image": "./assets/images/appleiphone13.jpeg"
+  },
+  {
+    "brand": "Nokia",
+    "product_name": "NOKIA 3.4 Mobile Phone",
+    "product_description": [
+     "Android 10",
+     "6.39 HD+ LCD touchscreen",
+     "Battery capacity: 4000 mAh"
+    ],
+    "price": 49,
+    "stock": 1,
+    "image": "./assets/images/nokia3.4.jpeg"
+  },
+  {
+    "brand": "Google",
+    "product_name": "GOOGLE Pixel 6a - 128 GB, Charcoal",
+    "product_description": [
+     "Android 12",
+     "6.1 Full HD+ OLED touchscreen",
+     "8 MP front camera",
+     "Battery capacity: 4410 mAh"
+    ],
+    "price": 399,
+    "stock": 1,
+    "image": "./assets/images/googlepixel.jpeg"
   }
+  
+
 ]
