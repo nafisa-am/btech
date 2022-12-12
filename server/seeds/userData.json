@@ -1,0 +1,66 @@
+[
+  {
+    "username": "pparker",
+    "email": "pparker@email.com",
+    "name": "Peter Parker",
+    "password": "password123",
+    "address": "test address street city area postcode"
+  },
+  {
+    "username": "mmarker",
+    "email": "mmarker@email.com",
+    "name": "Meter Marker",
+    "password": "password123",
+    "address": "76 Hunton road"
+  },
+  {
+    "username": "Afif",
+    "email": "afif@email.com",
+    "name": "Afif Nutella",
+    "password": "password123",
+    "address": "66 Tudor close"
+  },
+  {
+    "username": "Darren",
+    "email": "darren@email.com",
+    "name": "Darren Richarlison",
+    "password": "password123",
+    "address": "61 Slade Street"
+  },
+  {
+    "username": "Suleiman",
+    "email": "sullyr@email.com",
+    "name": "Suleiman Rossi",
+    "password": "password123",
+    "address": "13 The drive"
+  },
+  {
+    "username": "Clarke ",
+    "email": "clarkr@email.com",
+    "name": "Clarkey Kent",
+    "password": "password123",
+    "address": "64 Zoo Lane"
+  },
+  {
+    "username": "Tom",
+    "email": "Tommy@email.com",
+    "name": "Tom Shelby",
+    "password": "password123",
+    "address": "12 Peaky BLinders Avenue"
+  },
+  {
+    "username": "ALice",
+    "email": "Aliceyr@email.com",
+    "name": "ALice Peterson",
+    "password": "password123",
+    "address": "34 Palace Road"
+  },
+  {
+    "username": "Tudor",
+    "email": "Tudor@email.com",
+    "name": "Don Tudor",
+    "password": "password123",
+    "address": " 1 Buckingham Palace"
+  }
+]
+

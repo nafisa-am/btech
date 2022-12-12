@@ -1,54 +1,66 @@
-const { Model, DataTypes } = require("sequelize");
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const sequelize = require("../config/connection");
+const userSchema = new Schema(
+  {
+    username: {
+    
+      type: String,
+      required: true,
+      index: { unique: true },
+      trim: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
 
-class User extends Model {
-	checkPassword(loginPw) {
-		return bcrypt.compareSync(loginPw, this.password);
-	}
-}
-
-User.init(
-	{
-		id: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-			primaryKey: true,
-			autoIncrement: true,
-		},
-		username: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		email: {
-			type: DataTypes.STRING,
-			allowNull: false,
-			unique: true,
-			validate: {
-				isEmail: true,
-			},
-		},
-		password: {
-			type: DataTypes.STRING,
-			allowNull: false,
-			validate: {
-				len: [6],
-			},
-		},
-	},
-	{
-		hooks: {
-			async beforeCreate(newUserData) {
-				newUserData.password = await bcrypt.hash(newUserData.password, 10);
-				return newUserData;
-			},
-		},
-		sequelize,
-		timestamps: false,
-		freezeTableName: true,
-		underscored: true,
-		modelName: "user",
-	}
+    email: {
+      type: String,
+      trim: true,
+      lowercase: true,
+      unique: true,
+      validate: {
+        validator: function (v) {
+          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: "Please enter a valid email",
+      },
+      required: [true, "Email required"],
+    },
+    password: {
+      type: String,
+    },
+    orders: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Order",
+      },
+    ],
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+    id: false,
+  }
 );
+
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
+  next();
+});
+
+userSchema.methods.validatePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+const User = model("User", userSchema);
 
 module.exports = User;

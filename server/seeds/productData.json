@@ -1,0 +1,116 @@
+
+[
+  {
+    "brand": "Apple",
+    "product_name": "MacBook Air",
+    "product_description": [
+      "macOS 11.0 Big Sur",
+      "Apple M1 chip",
+      "RAM: 8 GB / Storage: 256 GB SSD",
+      "Retina display",
+      "Battery life: Up to 18 hours"
+    ],
+    "price": 800,
+    "stock": 10,
+    "image": "macbook.jfif"
+  },
+  {
+    "brand": "Acer",
+    "product_name": "Aspire 3 15.6' Laptop - Intel® Core™ i3, 128 GB SSD, Silver",
+    "product_description": [
+      "Windows 11",
+      "Intel® Core™ i3-1115G4 Processor",
+      "RAM: 8 GB / Storage: 128 GB SSD",
+      "Full HD screen",
+      "Battery life: Up to 9 hours"
+    ],
+    "price": 300,
+    "stock": 10,
+    "image": "acer.jfif"
+  },
+  {
+    "brand": "HP",
+    "product_name": "HP Spectre x360 16-f1500na 16 2 in 1 Laptop",
+    "product_description": [
+      "Windows 10",
+      "Intel® Core™ i4Processor",
+      "RAM: 14 GB / Storage: 160 GB SSD",
+      "Full HD screen 4K",
+      "Battery life: Up to 8 hours"
+    ],
+    "price": 350,
+    "stock": 7,
+    "image": "acer.jfif"
+  },
+
+  {
+    "brand": "Dell",
+    "product_name": "HP 11a G8 EE 11.6 Chromebook - AMD A4, 16 GB eMMC, Grey",
+    "product_description": [
+      "Windows 10.5",
+      "Intel® Core™ i9 Processor",
+      "RAM: 14 GB / Storage: 200 GB SSD",
+      "Full HD screen 10K",
+      "Battery life: Up to 10 hours"
+    ],
+    "price": 400,
+    "stock": 3,
+    "image": "acer.jfif"
+  },
+  {
+    "brand": "Logitech",
+    "product_name": "LOGITECH G535 LIGHTSPEED Wireless Gaming Headset",
+    "product_description": [
+      "ultra fast sensor",
+      "Bluetooth 2.4g",
+      "external battery",
+      "6 DPI modes",
+      "Battery life: Up to 20 hours"
+    ],
+    "price": 150,
+    "stock": 4,
+    "image": "acer.jfif"
+  },
+  {
+    "brand": "Asus",
+    "product_name": "ASUS Zenbook Duo 14 UX482EA 14 Laptop",
+    "product_description": [
+      "Intel® Core™ i9 Processor",
+      "Bluetooth 2.4g",
+      "external battery included",
+      "8 DPI modes",
+      "Battery life: Up to 20 hours"
+    ],
+    "price": 250,
+    "stock": 3,
+    "image": "acer.jfif"
+  },
+  {
+    "brand": "Huawei",
+    "product_name": "Huawei x40 ",
+    "product_description": [
+      "Android 10",
+      "Superfast 8 core processor",
+      "RAM: 12 GB / Storage: 10 GB SSD",
+      "Full HD screen 4K",
+      "Battery life: Up to 12 hours"
+    ],
+    "price": 450,
+    "stock": 2,
+    "image": "acer.jfif"
+  },
+  {
+    "brand": "Chromebook",
+    "product_name": "The Chromebook",
+    "product_description": [
+      "Windows 13",
+      "Intel® Core™ i12Processor",
+      "RAM: 20 GB / Storage: 190 GB SSD",
+      "Full HD screen 4K Ultra",
+      "Battery life: Up to 7 hours"
+    ],
+    "price": 750,
+    "stock": 1,
+    "image": "acer.jfif"
+  }
+]
