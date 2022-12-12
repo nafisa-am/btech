@@ -1,13 +1,13 @@
 import React from "react";
 // import Auth from "../../utils/auth";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link, HashR } from "react-router-dom";
 import BtechLogo from "../../assets/logo2.png";
 import "./index.css";
 
 function Nav() {
   // if (Auth.loggedIn()) {
   return (
-    <BrowserRouter>
+    <div>
       {/* Logo */}
       <div className="navbar">
         <div className="logo">
@@ -21,7 +21,7 @@ function Nav() {
         </div>
 
         {/* Search bar */}
-        <div className="container-search">
+        {/* <div className="container-search">
           <form className="d-flex input-group w-auto">
             <input
               type="search"
@@ -31,12 +31,12 @@ function Nav() {
               aria-describedby="search-addon"
             />
           </form>
-        </div>
+        </div> */}
 
         {/* Navigation links */}
         <ul>
           <li className="mx-1">
-            <Link className="hyperlink" to="/home">
+            <Link className="hyperlink" to="/">
               Home
             </Link>
           </li>
@@ -44,6 +44,11 @@ function Nav() {
           <li className="mx-1">
             <Link className="hyperlink" to="/about">
               About
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link className="hyperlink" to="/search">
+              Search
             </Link>
           </li>
 
@@ -131,7 +136,7 @@ function Nav() {
           </li>
         </ul>
       </div>
-    </BrowserRouter>
+    </div>
   );
   // } else {
   // 	return (
