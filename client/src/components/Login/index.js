@@ -41,10 +41,11 @@ function LoginForm() {
     setPassword("");
     setEmail("");
   };
-
+  const spacer = "mt-2";
   return (
     <div>
-      <form className="form">
+      <form className="form" class="d-flex flex-column align-items-center">
+        <h2>Login into your account</h2>
         <input
           value={email}
           name="email"
@@ -58,6 +59,7 @@ function LoginForm() {
           onChange={handleInputChange}
           type="text"
           placeholder="username"
+          class={spacer}
         />
         <input
           value={password}
@@ -65,9 +67,14 @@ function LoginForm() {
           onChange={handleInputChange}
           type="password"
           placeholder="password"
+          class={spacer}
         />
-        <button type="button" onClick={handleFormSubmit}>
-          login
+        <button
+          type="button"
+          class="btn btn-primary btn-sm mt-3"
+          onClick={handleFormSubmit}
+        >
+          Login
         </button>
       </form>
       {errorMessage && (

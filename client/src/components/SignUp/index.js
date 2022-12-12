@@ -52,15 +52,19 @@ function SignUpForm() {
     setName("");
   };
 
+  const spacer = "mt-2";
+
   return (
     <div>
-      <form className="form">
+      <form className="form" class="d-flex flex-column align-items-center">
+        <h2>Create your account</h2>
         <input
           value={email}
           name="email"
           onChange={handleInputChange}
           type="email"
           placeholder="email"
+          class={spacer}
         />
         <input
           value={userName}
@@ -68,6 +72,7 @@ function SignUpForm() {
           onChange={handleInputChange}
           type="text"
           placeholder="username"
+          class={spacer}
         />
         <input
           value={name}
@@ -75,6 +80,7 @@ function SignUpForm() {
           onChange={handleInputChange}
           type="text"
           placeholder="name"
+          class={spacer}
         />
         <input
           value={address}
@@ -82,6 +88,7 @@ function SignUpForm() {
           onChange={handleInputChange}
           type="text"
           placeholder="address"
+          class={spacer}
         />
         <input
           value={password}
@@ -89,8 +96,13 @@ function SignUpForm() {
           onChange={handleInputChange}
           type="password"
           placeholder="Password"
+          class={spacer}
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button
+          type="button"
+          class="btn btn-primary btn-sm mt-3"
+          onClick={handleFormSubmit}
+        >
           Submit
         </button>
       </form>
