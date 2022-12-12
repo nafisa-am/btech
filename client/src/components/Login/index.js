@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 
-import { checkPassword, validateEmail } from "../../utils/logins";
-
 function LoginForm() {
   const [email, setEmail] = useState("");
-  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -14,8 +11,6 @@ function LoginForm() {
     const inputValue = target.value;
     if (inputType === "email") {
       setEmail(inputValue);
-    } else if (inputType === "userName") {
-      setUserName(inputValue);
     } else {
       setPassword(inputValue);
     }
@@ -24,26 +19,13 @@ function LoginForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!validateEmail(email) || !userName) {
-      setErrorMessage("Email or username is invalid");
-      return;
-    }
-    if (!checkPassword(password)) {
-      setErrorMessage(
-        `Choose a more secure password for the account: ${userName}`
-      );
-      return;
-    }
-
     const form = document.getElementById("loginForm");
     const formData = new FormData(form);
 
     alert(`here is your data:
     ${formData.get("email")}
-    ${formData.get("userName")}
     ${formData.get("password")}`);
 
-    setUserName("");
     setPassword("");
     setEmail("");
   };
@@ -62,14 +44,6 @@ function LoginForm() {
           onChange={handleInputChange}
           type="email"
           placeholder="email"
-        />
-        <input
-          value={userName}
-          name="userName"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="username"
-          class={spacer}
         />
         <input
           value={password}

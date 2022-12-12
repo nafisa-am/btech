@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { checkPassword, validateEmail } from "../../utils/logins";
-
 function SignUpForm() {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
@@ -32,16 +30,6 @@ function SignUpForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!validateEmail(email) || !userName) {
-      setErrorMessage("Email or username is invalid");
-      return;
-    }
-    if (!checkPassword(password)) {
-      setErrorMessage(
-        `Choose a more secure password for the account: ${userName}`
-      );
-      return;
-    }
     const form = document.getElementById("signupForm");
     const formData = new FormData(form);
 
