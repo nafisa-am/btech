@@ -81,6 +81,8 @@ const typeDefs = gql`
     ): Product
     addOrder(orderID: ID!): Order
     removeProduct(productId: ID!): Product
+    addBrand(brandId: ID!): Brand
+    addCategory(categoryId: ID!): Category
   }
 `;
 
