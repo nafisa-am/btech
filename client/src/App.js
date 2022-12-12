@@ -13,6 +13,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Products from "./components/ProductList";
 import UserProvider from "./contexts/UserProvider";
+import LoginSignup from "./pages/LoginSignup";
 
 const httpLink = createHttpLink({
   uri: process.env.GRAPHQL_URL || "http://localhost:3001/graphql",
@@ -45,7 +46,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<Products />} />
-              {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
+              <Route path="/loginSignup" element={<LoginSignup />} />
             </Routes>
             {/* FOOTER */}
           </Router>
