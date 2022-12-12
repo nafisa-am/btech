@@ -1,13 +1,13 @@
 import React from "react";
 // import Auth from "../../utils/auth";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import BtechLogo from "../../assets/logo2.png";
 import "./index.css";
 
 function Nav() {
 	// if (Auth.loggedIn()) {
 	return (
-		<BrowserRouter>
+		<div>
 			{/* Logo */}
 			<div className="navbar">
 				<div className="logo">
@@ -134,7 +134,7 @@ function Nav() {
 					</li>
 				</ul>
 			</div>
-		</BrowserRouter>
+		</div>
 	);
 	// } else {
 	// 	return (
