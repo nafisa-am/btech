@@ -1,50 +1,47 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 function SignUpForm() {
-  const [email, setEmail] = useState("");
-  const [userName, setUserName] = useState("");
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+    userName: "",
+    address: "",
+    name: "",
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
-  const handleInputChange = (e) => {
-    e.preventDefault();
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
 
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
-    if (inputType === "email") {
-      setEmail(inputValue);
-    } else if (inputType === "userName") {
-      setUserName(inputValue);
-    } else if (inputType === "password") {
-      setPassword(inputValue);
-    } else if (inputType === "name") {
-      setName(inputValue);
-    } else {
-      setAddress(inputValue);
-    }
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    console.log(formState);
 
-    const form = document.getElementById("signupForm");
-    const formData = new FormData(form);
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
 
-    alert(`here is your data:
-    ${formData.get("email")}
-    ${formData.get("userName")}
-    ${formData.get("password")}
-    ${formData.get("name")}
-    ${formData.get("address")}`);
-
-    setUserName("");
-    setPassword("");
-    setEmail("");
-    setAddress("");
-    setName("");
+    setFormState({
+      email: "",
+      password: "",
+      userName: "",
+      address: "",
+      name: "",
+    });
   };
 
   const spacer = "mt-2";
@@ -58,14 +55,14 @@ function SignUpForm() {
       >
         <h2>Create your account</h2>
         <input
-          value={email}
+          value={formState.email}
           name="email"
           onChange={handleInputChange}
           type="email"
           placeholder="email"
         />
         <input
-          value={userName}
+          value={formState.userName}
           name="userName"
           onChange={handleInputChange}
           type="text"
@@ -73,7 +70,7 @@ function SignUpForm() {
           class={spacer}
         />
         <input
-          value={name}
+          value={formState.name}
           name="name"
           onChange={handleInputChange}
           type="text"
@@ -81,7 +78,7 @@ function SignUpForm() {
           class={spacer}
         />
         <input
-          value={address}
+          value={formState.address}
           name="address"
           onChange={handleInputChange}
           type="text"
@@ -89,7 +86,7 @@ function SignUpForm() {
           class={spacer}
         />
         <input
-          value={password}
+          value={formState.password}
           name="password"
           onChange={handleInputChange}
           type="password"
@@ -104,11 +101,6 @@ function SignUpForm() {
           Submit
         </button>
       </form>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
     </div>
   );
 }
