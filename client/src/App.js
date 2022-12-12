@@ -44,7 +44,7 @@ function App() {
             {/* HEADER */}
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<Products />} />
+              {/* <Route path="/about" element={<Products />} /> */}
               {/* <Route path="loginSignup" element={<LoginSignup />} /> */}
             </Routes>
             {/* FOOTER */}
