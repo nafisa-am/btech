@@ -1,21 +1,29 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import StaticExample from "../popup";
 
-import { pluralize } from "../../utils/helpers";
-import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
 export default function Items({ data }) {
   console.log("data", data);
-  // function cart() {
-  //   const [item, setItem] = useState("");
-  //   addToCart = (item) => {};
-  // }
+  const [item, setItem] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("item", JSON.stringify(item));
+  }, [item]);
+
+  function addToCart(product, price) {
+    console.log({ prodname: product });
+    const newProduct = [{ prodname: product, cost: price }, ...item];
+    console.log(newProduct);
+    setItem(newProduct);
+    StaticExample();
+  }
 
   // const [state, dispatch] = useStoreContext();
   // const { image, product_name, _id, price, product_description } = data;
@@ -55,14 +63,13 @@ export default function Items({ data }) {
                 <Card.Text>
                   <strong>Price:</strong>£{item.price}
                 </Card.Text>
-                {/* <Card.Text>
-                  <strong> GitHub: </strong>
-                  <a href={item.links.github}> {item.links.github}</a>
-                </Card.Text>
-                <Card.Text>
-                  <strong>Deployed: </strong>
-                  <a href={item.links.deployed}>{item.links.deployed}</a>
-                </Card.Text> */}
+                <button
+                  onClick={() => {
+                    addToCart(item.product_name, item.price);
+                  }}
+                >
+                  Addtocart
+                </button>
               </Card.Body>
             </Card>
           </Col>

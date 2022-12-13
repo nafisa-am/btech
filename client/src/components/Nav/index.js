@@ -1,10 +1,20 @@
-import React from "react";
-// import Auth from "../../utils/auth";
+import { useState, useEffect } from "react"; // import Auth from "../../utils/auth";
 import { Link, BrowserRouter } from "react-router-dom";
 import BtechLogo from "../../assets/logo2.png";
 import "./index.css";
 
 function Nav() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("item"));
+    if (items) {
+      setItems(items);
+    }
+  }, []);
+  console.log("items", items);
+  var total = items.reduce((accum, item) => accum + item.cost, 0);
+  console.log("navtotal", total);
   // if (Auth.loggedIn()) {
   return (
     <BrowserRouter>
@@ -88,7 +98,7 @@ function Nav() {
             <ul className="navbar-nav d-flex flex-row">
               <li className="nav-item me-3 me-lg-0">
                 <a className="nav-link" href="/cart">
-                  <i className="fas fa-shopping-cart"></i>
+                  <i className="fas fa-shopping-cart"> cart total £{total}</i>
                 </a>
               </li>
               <li className="nav-item me-3 me-lg-0">
