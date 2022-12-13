@@ -26,12 +26,12 @@ Heroku URL - https://limitless-taiga-85825.herokuapp.com
 
 ## Contributors
  
-Ramla  - https://github.com/ramlaahmed
-Ayan  - https://github.com/ayaneey
-Ethan - https://github.com/EthanDMello
-Darren  - https://github.com/kandekore
-Nafisa  - https://github.com/nafisa-am
-Suleiman  - https://github.com/SuleRas
-Afif  - https://github.com/Affiiiffff
+- Ramla  - https://github.com/ramlaahmed
+- Ayan  - https://github.com/ayaneey
+- Ethan - https://github.com/EthanDMello
+- Darren  - https://github.com/kandekore
+- Nafisa  - https://github.com/nafisa-am
+- Suleiman  - https://github.com/SuleRas
+- Afif  - https://github.com/Affiiiffff
 
 
