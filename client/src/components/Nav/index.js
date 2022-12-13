@@ -88,11 +88,10 @@ function Nav() {
                 <i className="fas fa-shopping-cart"></i>
               </a>
             </div>
-            <li className="mx-1">
-              <Link className="hyperlink" to="/loginSignup">
-                Login
-              </Link>
-            </li>
+
+            <Link className="hyperlink" to="/loginSignup">
+              Login
+            </Link>
 
             <div className="nav-item me-3 me-lg-0 dropdown d-inline-flex p-3">
               <i className="fas fa-user"></i>
