@@ -42,7 +42,6 @@ function App() {
       <UserProvider>
         <div className="App">
           <Nav />
-          <Router>
           {/* HEADER */}
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -51,7 +50,6 @@ function App() {
             <Route path="/loginSignup" element={<LoginSignup />} />
           </Routes>
           {/* FOOTER */}
-          </Router>
         </div>
       </UserProvider>
     </ApolloProvider>
