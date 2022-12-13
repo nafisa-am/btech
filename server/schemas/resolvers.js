@@ -91,12 +91,14 @@ const resolvers = {
       const newProduct = await Product.create(args);
       return newProduct;
     },
-    // addBrand: async (parent, args, context) =>
-    // {
-    //   const newBrand = await Brand.create(args);
-    //   return newBrand;
-    // }
-    // addCategory 
+    addBrand: async (parent, args, context) => {
+      const newBrand = await Brand.create(args);
+      return newBrand;
+    },
+    addCategory: async (parent, args, context) => {
+      const newCategory = await Category.create(args);
+      return newCategory;
+    },
   },
 };
 
