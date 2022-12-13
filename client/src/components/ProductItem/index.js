@@ -17,12 +17,16 @@ export default function Items({ data }) {
     localStorage.setItem("item", JSON.stringify(item));
   }, [item]);
 
-  function addToCart(product, price) {
+  function addToCart(product, price, image) {
     console.log({ prodname: product });
-    const newProduct = [{ prodname: product, cost: price }, ...item];
+    const newProduct = [
+      { prodname: product, cost: price, image: image },
+      ...item,
+    ];
     console.log(newProduct);
     setItem(newProduct);
     StaticExample();
+    alert("Item Added To Cart");
   }
 
   // const [state, dispatch] = useStoreContext();
@@ -65,7 +69,7 @@ export default function Items({ data }) {
                 </Card.Text>
                 <button
                   onClick={() => {
-                    addToCart(item.product_name, item.price);
+                    addToCart(item.product_name, item.price, item.image);
                   }}
                 >
                   Addtocart

@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+.prodname.list-group-item {
+  width: 50%;
+}
+p.prodnametxt {
+  font-weight: 700;
+  font-size: 22px;
+  padding-top: 10%;
+}
+p.prodpricetxt {
+  font-weight: 700;
+  font-size: 22px;
+  padding-top: 120%;
+}
+.btun.list-group-item {
+  padding-top: 5%;
+}
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-left: 10%;
+}
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-left: 10%;
+}
+.totalbox.card {
+  margin-left: 10%;
+  width: 78%;
+}
+p.total {
+  font-weight: 700;
+  font-size: 30px;
+  /* padding-top: 120%; */
+  float: right;
+  margin-right: 11%;
+}
+.mx-1 {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+  background: #0000 !important;
+  border: #00ffff00;
+}
