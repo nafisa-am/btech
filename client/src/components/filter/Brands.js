@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-​
-import { GET_BRANDS } from "../../utils/queries";
+​import { GET_BRANDS } from "../../utils/queries";
 import FilterSubComponent from "./FilterSubComponent";
 import Products from "../../components/ProductList";
 ​
