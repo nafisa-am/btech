@@ -9,9 +9,13 @@ const mongoose = require("mongoose");
 
 // module.exports = { DB_NAME, DB_URL, MONGOOSE_OPTIONS };
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/btech", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    "mongodb+srv://dreamTeam:L9ZVp2nxLXLmYXRG@btech.w5lybf0.mongodb.net/btech",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 module.exports = mongoose.connection;
