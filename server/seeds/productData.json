@@ -1,4 +1,3 @@
-
 [
   {
     "brand": "Apple",
@@ -12,7 +11,7 @@
     ],
     "price": 800,
     "stock": 10,
-    "image": "macbook.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
   {
     "brand": "Acer",
@@ -26,7 +25,21 @@
     ],
     "price": 300,
     "stock": 10,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
+  },
+  {
+    "brand": "Acer",
+    "product_name": "Aspire 3 15.6' Laptop - Intel® Core™ i3, 128 GB SSD, Silver",
+    "product_description": [
+      "Windows 11",
+      "Intel® Core™ i3-1115G4 Processor",
+      "RAM: 8 GB / Storage: 128 GB SSD",
+      "Full HD screen",
+      "Battery life: Up to 9 hours"
+    ],
+    "price": 300,
+    "stock": 10,
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
   {
     "brand": "HP",
@@ -40,7 +53,7 @@
     ],
     "price": 350,
     "stock": 7,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
 
   {
@@ -55,7 +68,7 @@
     ],
     "price": 400,
     "stock": 3,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
   {
     "brand": "Logitech",
@@ -69,7 +82,7 @@
     ],
     "price": 150,
     "stock": 4,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
   {
     "brand": "Asus",
@@ -83,7 +96,7 @@
     ],
     "price": 250,
     "stock": 3,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
   {
     "brand": "Huawei",
@@ -97,7 +110,7 @@
     ],
     "price": 450,
     "stock": 2,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   },
   {
     "brand": "Chromebook",
@@ -111,6 +124,6 @@
     ],
     "price": 750,
     "stock": 1,
-    "image": "acer.jfif"
+    "image": "https://www.shutterstock.com/image-photo/south-view-praia-da-arda-600w-1144202759.jpg"
   }
 ]

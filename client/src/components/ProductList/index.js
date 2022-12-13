@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import Items from "../ProductItem";
 import { GET_PRODUCTS } from "../../utils/queries";
 
-function Products() {
+function Products({ filters }) {
   const { data, error, loading } = useQuery(GET_PRODUCTS, {
     fetchPolicy: "no-cache",
   });
@@ -19,7 +19,7 @@ function Products() {
 
   console.log(data);
 
-  return <Items data={data.products} />;
+  return <Items data={data.products} filters={filters} />;
 }
 
 export default Products;
