@@ -7,7 +7,7 @@ function SignUpForm() {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
-    userName: "",
+    username: "",
     address: "",
     name: "",
   });
@@ -30,7 +30,7 @@ function SignUpForm() {
       const { data } = await addUser({
         variables: { ...formState },
       });
-      Auth.login(data.login.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -38,7 +38,7 @@ function SignUpForm() {
     setFormState({
       email: "",
       password: "",
-      userName: "",
+      username: "",
       address: "",
       name: "",
     });
@@ -62,8 +62,8 @@ function SignUpForm() {
           placeholder="email"
         />
         <input
-          value={formState.userName}
-          name="userName"
+          value={formState.username}
+          name="username"
           onChange={handleInputChange}
           type="text"
           placeholder="username"
