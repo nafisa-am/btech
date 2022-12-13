@@ -136,7 +136,7 @@
       "Apple A15 Bionic processor"
     ],
     "price": 749,
-    "stock": 1,
+    "stock": 2,
     "image": "./assets/images/appleiphone13.jpeg"
   },
   {
@@ -163,7 +163,32 @@
     "price": 399,
     "stock": 1,
     "image": "./assets/images/googlepixel.jpeg"
+  },
+  {
+    "brand": "Amazon",
+    "product_name": "AMAZON Fire HD 10 10.1 Tablet (2021) - 32 GB, Black",
+    "product_description": [
+    "Fire OS 7",
+    "Full HD screen",
+    "32 GB storage: Perfect for apps / photos / videos",
+    "Battery life: Up to 12 hours"
+    ],
+    "price": 149,
+    "stock": 1,
+    "image": "./assets/images/amazon.jpeg"
+  },
+  {
+    "brand": "Acer",
+    "product_name": "ACER ACTAB1022 10 Tablet - 32 GB, Gun Grey",
+    "product_description": [
+    "Android 11",
+    "32 GB storage: Perfect for apps / photos / videos",
+    "Battery life: Up to 9.5 hours",
+    "HD Ready screen"
+    ],
+    "price": 119,
+    "stock": 1,
+    "image": "./assets/images/acertab.jpeg"
   }
-  
 
 ]
