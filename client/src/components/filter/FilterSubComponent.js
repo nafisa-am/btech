@@ -1,10 +1,10 @@
 const FilterSubComponent = (props) => {
   const { filters, onChangeFilter } = props;
-​
+
   const handleBrandChange = (brand) => {
     // neha
     // should add the items to the array if they are not present and remove them if they can be fund in the array
-​
+
     if (!filters.indexOf(brand)) {
       const updatedFilters = filters.filter((item) => item !== brand);
       console.log(updatedFilters);
@@ -14,7 +14,7 @@ const FilterSubComponent = (props) => {
       onChangeFilter(newFilters);
     }
   };
-​
+
   return (
     <div>
       <label className="d-flex align-center gap-10px">
@@ -29,5 +29,5 @@ const FilterSubComponent = (props) => {
     </div>
   );
 };
-​
+
 export default FilterSubComponent;
