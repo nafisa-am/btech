@@ -89,7 +89,7 @@ function Nav() {
               </a>
             </div>
             <li className="mx-1">
-              <Link className="hyperlink" style={} to="/loginSignup">
+              <Link className="hyperlink" to="/loginSignup">
                 Login
               </Link>
             </li>
