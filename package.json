@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "An e-commerce website that sells phones and computer hardware.",
   "main": "server/server.js",
-  "proxy": "http://localhost:3001/",
   "scripts": {
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "start": "node server/server.js --ignore client",
