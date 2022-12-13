@@ -17,7 +17,7 @@ import LoginSignup from "./pages/LoginSignup";
 import SearchBar from "./pages/SearchResults";
 
 const httpLink = createHttpLink({
-  uri: process.env.GRAPHQL_URL || "http://localhost:3001/graphql",
+  uri: process.env.GRAPHQL_URL || "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
