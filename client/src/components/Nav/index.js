@@ -11,117 +11,104 @@ function Nav() {
   return (
     <div className="d-inline-flex w-100">
       {/* Logo */}
-      <div className="navbar navbar-expand-lg">
-        <div className="logo">
-          <img style={{ width: "200px", height: "200px" }} src={BtechLogo} />
-        </div>
-        {/* <div className="collapse" id="navbarToggleExternalContent">
-          <div className="bg-dark p-4">
-            <h5 className="text-white h4">Collapsed content</h5>
-            <span className="text-muted">Toggleable via the navbar brand.</span>
-          </div>
-        </div> */}
+      <div>
+        <img
+          style={{ width: "200px", height: "200px", padding: "3px" }}
+          src={BtechLogo}
+        />
+      </div>
+      <div className="navbar navbar-expand-md">
+        <div className="container-fluid">
+          {/* Navigation links */}
+          <ul>
+            <li className="mx-1">
+              <Link className="hyperlink" to="/home">
+                Home
+              </Link>
+            </li>
 
-        {/* Navigation links */}
-        <ul>
-          <li className="mx-1">
-            <Link className="hyperlink" to="/home">
-              Home
-            </Link>
-          </li>
+            <li className="mx-1">
+              <Link className="hyperlink" to="/about">
+                About
+              </Link>
+            </li>
 
-          <li className="mx-1">
-            <Link className="hyperlink" to="/about">
-              About
-            </Link>
-          </li>
-
-          {/* <li className="mx-1"> */}
-          <div className="dropdown">
-            <div
-              className="hyperlink dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Products
+            {/* <li className="mx-1"> */}
+            <div className="dropdown">
+              <div
+                className="hyperlink dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </div>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Tablets
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Laptops
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Mobile
+                  </a>
+                </li>
+              </ul>
             </div>
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Tablets
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Laptops
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Mobile
-                </a>
-              </li>
-            </ul>
-          </div>
-          <li className="mx-1">
-            <Link className="hyperlink" to="/orderHistory">
-              Order History
-            </Link>
-          </li>
-        </ul>
-        {/* Search bar */}
-        <div className="container-search">
-          <form className="d-flex input-group w-auto">
-            <input
-              type="search"
-              className="form-control rounded"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-          </form>
-        </div>
+            <li className="mx-1">
+              <Link className="hyperlink" to="/orderHistory">
+                Order History
+              </Link>
+            </li>
+          </ul>
+          {/* Search bar */}
+          <section className="d-inline-flex align-items-center">
+            <div className="container-search p-3">
+              <form className="d-flex input-group w-auto">
+                <input
+                  type="search"
+                  className="form-control rounded"
+                  placeholder="Search"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                />
+              </form>
+            </div>
 
-        {/* User Icons */}
-        <div className="container-user">
-          <ul className="navbar-nav d-flex flex-row">
-            <li className="nav-item me-3 me-lg-0">
+            {/* User Icons */}
+
+            <div className="nav-item me-3 me-lg-0 p-3">
               <a className="nav-link" href="/cart">
                 <i className="fas fa-shopping-cart"></i>
               </a>
-            </li>
-            <li className="nav-item me-3 me-lg-0">
-              <a className="nav-link" href="/twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
+            </div>
 
-            <li className="nav-item me-3 me-lg-0 dropdown">
-              <ul className="mx-1">
-                <i className="fas fa-user"></i>
-
-                <div className="dropdown">
-                  <div
-                    className="hyperlink dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  ></div>
+            <div className="nav-item me-3 me-lg-0 dropdown d-inline-flex p-3">
+              <i className="fas fa-user"></i>
+              <div className="dropdown">
+                <div
+                  className="hyperlink dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   <ul className="dropdown-menu" id="user">
                     <li>
                       <a className="dropdown-item" href="/my-account">
                         My Account
                       </a>
                     </li>
-                    {/* <Link className="dropdown-item" to="/my-account">
-												My Account
-											</Link> */}
                   </ul>
                 </div>
-              </ul>
-            </li>
-          </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
