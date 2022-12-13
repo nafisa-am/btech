@@ -1,19 +1,27 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-
+​
 import { GET_BRANDS } from "../../utils/queries";
 import FilterSubComponent from "./FilterSubComponent";
 import Products from "../../components/ProductList";
-
+​
 const BrandComponent = () => {
   const laptopBrands = ["Macbook", "Acer", "HP", "Dell", "Lenovo"];
   const mobileBrands = ["Iphone", "Samsung", "Huawei", "Xiaomi"];
   const tabletBrands = ["Apple"];
-
+​
   let allData = [...laptopBrands, ...mobileBrands, ...tabletBrands];
-
+​
   const [filters, setFilters] = useState([]);
-
+​
+  const onChangeFilter = (updatedFilters) => {
+    setFilters(updatedFilters);
+  };
+​
+  useEffect(() => {
+    console.log({ filters });
+  }, [filters]);
+​
   return (
     <div className="d-flex justify-content-between flex-column flex-md-row ">
       <div
@@ -30,7 +38,7 @@ const BrandComponent = () => {
                   brand={brand}
                   key={brand}
                   filters={filters}
-                  setFilters={setFilters}
+                  onChangeFilter={onChangeFilter}
                 />
               );
             })}
@@ -67,7 +75,7 @@ const BrandComponent = () => {
           </div>{" "}
         </div> */}
       </div>
-
+​
       <div className="w-75">
         <div className="d-flex flex-column">
           <Products filters={filters} />
@@ -76,5 +84,5 @@ const BrandComponent = () => {
     </div>
   );
 };
-
+​
 export default BrandComponent;
