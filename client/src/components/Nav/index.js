@@ -9,6 +9,7 @@ import "./index.css";
 function Nav() {
   // if (Auth.loggedIn()) {
   return (
+
     <div>
       {/* Logo */}
       <div className="navbar">
@@ -60,6 +61,7 @@ function Nav() {
           </li>
 
           {/* <li className="mx-1">
+
             <div className="dropdown">
               <div
                 className="hyperlink dropdown-toggle"
@@ -87,6 +89,7 @@ function Nav() {
                 </li>
               </ul>
             </div>
+
           </li> */}
 
           {/* <li className="mx-1">
@@ -145,6 +148,7 @@ function Nav() {
 						</li> */}
           </li>
         </ul>
+
       </div>
     </div>
   );

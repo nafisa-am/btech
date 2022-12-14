@@ -5,8 +5,6 @@ const path = require("path");
 const { typeDefs, resolvers } = require("./schemas");
 // const { DB_NAME, DB_URL, MONGOOSE_OPTIONS } = require("./config/config");
 
-
-
 // mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const db = require("./config/config");
@@ -25,6 +23,14 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+}
+
+app.get("/", (req, res) => {
+  app.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
