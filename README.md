@@ -34,7 +34,10 @@ User is able to view the technology products available on the site in the home p
 
 
 
+
 ## Screenshots
+
+<img width="1440" alt="Screenshot 2022-12-14 at 19 54 51" src="https://user-images.githubusercontent.com/108237958/207721096-dab97453-3519-48c7-a9f9-b4de7486fd12.png">
 
 <img width="1440" alt="Screenshot 2022-12-14 at 19 36 15" src="https://user-images.githubusercontent.com/108237958/207719930-171a830b-111f-4151-8d0a-9a8824afce7c.png">
 
