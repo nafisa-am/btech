@@ -10,7 +10,9 @@ const resolvers = {
     categories: async () => {
       return Category.find({});
     },
-
+    users: async () => {
+      return User.find({});
+    },
     brands: async () => {
       return Brand.find({});
     },
