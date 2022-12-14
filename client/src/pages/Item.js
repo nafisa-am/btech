@@ -1,22 +1,15 @@
 import { useState, useEffect } from "react";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-export default function Items({ data, filters }) {
-  let finalArr = [];
-  if (filters) {
-    filters.map((filter) => {
-      let newArr = data.filter((a) => {
-        return a.brand === filter;
-      });
+import { idbPromise } from "../utils/helpers";
 
-      finalArr.push(...newArr);
-    });
-  }
+export default function Items({ data }) {
+  console.log("data", data);
   const [item, setItem] = useState([]);
 
   useEffect(() => {
@@ -34,22 +27,42 @@ export default function Items({ data, filters }) {
 
     alert("Item Added To Cart");
   }
-  console.log(finalArr);
 
+  // const [state, dispatch] = useStoreContext();
+  // const { image, product_name, _id, price, product_description } = data;
+  // const { cart } = state;
+
+  // const addToCart = () => {
+  //   const itemInCart = cart.find((cartItem) => cartItem._id === _id);
+  //   if (itemInCart) {
+  //     dispatch({
+  //       type: UPDATE_CART_QUANTITY,
+  //       _id: _id,
+  //       purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+  //     });
+  //     idbPromise("cart", "put", {
+  //       ...itemInCart,
+  //       purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+  //     });
+  //   } else {
+  //     dispatch({
+  //       type: ADD_TO_CART,
+  //       product: { ...data, purchaseQuantity: 1 },
+  //     });
+  //     idbPromise("cart", "put", { ...data, purchaseQuantity: 1 });
+  //   }
+  // };
   return (
     <Container className="mainbody">
       <Row xs={1} md={3} className="g-4">
-        {finalArr.map((item, idx) => (
+        {data.map((item, idx) => (
           <Col className="d-flex">
             <Card className="flex-fill" key={item.product_name}>
               <Card.Img variant="top" src={item.image} />
               <Card.Body>
                 <Card.Title className="projtit">{item.product_name}</Card.Title>
-                <div className="d-flex flex-column justify-content-start align-items-start px-4 my-5">
-                  {item.product_description.map((item) => {
-                    return <Card.Text>{item}</Card.Text>;
-                  })}
-                </div>
+
+                <Card.Text>{item.product_description}</Card.Text>
                 <Card.Text>
                   <strong>Price:</strong>£{item.price}
                 </Card.Text>
