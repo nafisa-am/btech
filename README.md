@@ -30,7 +30,7 @@ We wanted to establish a full-stack app where users are able to search for produ
 
 ## Usage
 
-User is able to view the technology products available on the site in the home page. You are able to filter through brands by navigating to the filter option on top of the pages. Users are able to add items to the cart and view them by clicking on the cart section in the navigation bar. User also has the option to login/signup for easier access of products<img width="1440" alt="Screenshot 2022-12-14 at 19 36 15" src="https://user-images.githubusercontent.com/108237958/207719840-4f041c46-26d1-49dd-8730-1a2cd7c26888.png">
+User is able to view the technology products available on the site in the home page. You are able to filter through brands by navigating to the filter option on top of the pages. Users are able to add items to the cart and view them by clicking on the cart section in the navigation bar. User also has the option to login/signup for easier access of products.
 
 
 
