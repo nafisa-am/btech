@@ -25,7 +25,7 @@ We wanted to establish a full-stack app where users are able to search for produ
 - MongoDb
 - Express
 - graphql
-- Emotions
+- Emotion
 
 
 ## Usage
