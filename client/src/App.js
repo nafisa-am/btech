@@ -15,6 +15,7 @@ import Products from "./components/ProductList";
 import UserProvider from "./contexts/UserProvider";
 import LoginSignup from "./pages/LoginSignup";
 import SearchBar from "./pages/SearchResults";
+import Cart from "./pages/Cart";
 
 const httpLink = createHttpLink({
   uri: process.env.GRAPHQL_URL || "http://localhost:3001/graphql",
@@ -45,9 +46,10 @@ function App() {
           {/* HEADER */}
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/about" element={<Products />} />
+
             <Route exact path="/search" element={<SearchBar />} />
-            <Route path="/loginSignup" element={<LoginSignup />} />
+            <Route exact path="/cart" element={<Cart />} />
+            <Route path="/loginsignup" element={<LoginSignup />} />
           </Routes>
           {/* FOOTER */}
         </div>

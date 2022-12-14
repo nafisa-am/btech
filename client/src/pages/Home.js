@@ -1,31 +1,25 @@
 import React from "react";
-// import { QUERY_PRODUCTS } from "../utils/queries";
-// // import ProductList from "../components/ProductList";
-// // import CategoryMenu from "../components/CategoryMenu";
-// // import Cart from "../components/Cart";
-// import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
-// import ProductList from "../components/ProductItem";
+import Items from "./Item";
+import { GET_PRODUCTS } from "../utils/queries";
 
-const Home = () => {
-  //   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  //   const products = data?.products || [];
-  return (
-    <div className="container">
-      {/* to add what components you want to render */}
-      {/* <CategoryMenu />
-      <ProductList />
-      <Cart /> */}
-      {/* {Data.map((post) => (
-        <div key={post.id}>
-          <p>{post.product}</p>
-          <p>{post.category}</p>
-        </div>
-      ))} */}
-      <h1>Home</h1>
-      {/* {loading ? <div>Loading...</div> : <ProductList products={products} />} */}
-    </div>
-  );
-};
+function Home() {
+  const { data, error, loading } = useQuery(GET_PRODUCTS, {
+    fetchPolicy: "no-cache",
+  });
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Oops! Something went wrong with your request</div>;
+  }
+
+  console.log(data);
+
+  return <Items data={data.products} />;
+}
 
 export default Home;
